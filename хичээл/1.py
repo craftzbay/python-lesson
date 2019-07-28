@@ -20,10 +20,10 @@ print(x)
 print(y)
 print(z)
 
-x = y = z = "Apple"
-print(x)
-print(y)
-print(z)
+a = b = c = "Apple"
+print(a)
+print(b)
+print(c)
 
 # Дасгал 
 #     1. Hello world гэж хэвлэх
