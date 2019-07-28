@@ -15,6 +15,15 @@ print(тоо) # тоо-г хэвлэх
 хувьсагч = "Python"
 print("Hello " + хувьсагч)
 
+x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)
+
+x = y = z = "Apple"
+print(x)
+print(y)
+print(z)
 
 # Дасгал 
 #     1. Hello world гэж хэвлэх
