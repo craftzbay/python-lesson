@@ -10,7 +10,7 @@
 
 ## list-н ард элемент нэмэх
 `ruits.append("cherry")`
-print(fruits)
+`print(fruits)`
 
 ## Өгөгдсөн индекс бүхий байрлалд элемент нэмэх
 `ruits.insert(1, "kiwi")`
@@ -63,8 +63,8 @@ print(listcopy1)`
 print(listcopy2)`
 
 ## for
-for x in cars:
-    print(x)
+`for x in cars:
+    print(x)`
 
 ## if
 `if "orange" in fruits:
