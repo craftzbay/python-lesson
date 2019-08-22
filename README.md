@@ -14,11 +14,11 @@ Python программчлалын хэлний хичээлийг 26 орол�
 | 6   | Lists and Tuples          | 1/2     |
 | 7   | Sets and Dictionaries     | 1/2     |
 | 8   | Functions, Modules        | 1/2     |
-| 9   | Classes and Objects       | 1/2     |
-| 10  | Inheritance               | 1/2     |
-| 11  | String methods            | 1/2     |
-| 12  | Popular libraries         | 1/2     |
-| 13  | File handling             | 1/2     |
+| 9   | Popular libraries         | 1/2     |
+| 10  | String methods          | 1/2     |
+| 11  | File handling          | 1/2     |
+| 12  | Classes and Objects      | 1/2     |
+| 13  | Inheritance             | 1/2     |
 | 14  | Tkinter                   | 1/2     |
 | 15  | SQL                       | 1/2     |
 | 16  | SQL                       | 1/2     |
