@@ -1,8 +1,7 @@
-n = int(input()) # 5    15
-m = int(input()) # 10   5
-niilber = 0
-ih = max(n,m)
-while ih >= min(n,m) : # 5 >= 10
-    niilber = niilber + ih
-    ih = ih - 1
-print(niilber)
+# import re
+
+# my_str = "Hi my name is John and email address is john.doe@somecompany.co.uk and my friend's email is jane_doe124@gmail.com"
+# emails = re.findall("([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)", my_str)
+
+# for mail in an email:
+#    print(mail)
