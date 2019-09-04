@@ -8,9 +8,11 @@ PIP хувилбар шалгах `pip --version`
 Нэмэлт сан суулгахдаа `pip install camelcase`
 Суулгасан сан ашиглахдаа:
 
-```
-import camelcase
+```import camelcase
 c = camelcase.CamelCase()
 txt = "hello world"
 print(c.hump(txt))
 ```
+
+Суулгасан сан устгах `pip uninstall camelcase`
+Сангуудын жагсаалт харах `pip list`
