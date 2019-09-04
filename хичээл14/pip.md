@@ -1,6 +1,5 @@
-# Python
-
-## PIP - python package manager
+# PIP
+## python package manager
 
 PIP нь пайтон программчлалын хэлний нэмэлт модуль болон сан удирдах хэрэгсэл юм.
 PIP хувилбар шалгах `pip --version`
