@@ -4,6 +4,29 @@
 
 Тэмдэгт мөрийг тухайн загварт нийцэж байгаа эсэхийг шалгахад ашиглагддаг. Тухайлбал цахим хаяг, утасны дугаар, регистрийн дугаар гэх мэт тэмдэгт нь загварт тохирж байгааг шалгадаг.
 
+```
+import re
+
+#Return a list containing every occurrence of "ai":
+
+str = "The rain in Spain"
+x = re.findall("ai", str)
+print(x)
+
+#Split the string at every white-space character:
+
+str = "The rain in Spain"
+x = re.split("\s", str)
+print(x)
+
+#Replace all white-space characters with the digit "9":
+
+str = "The rain in Spain"
+x = re.sub("\s", "9", str)
+print(x)
+```
+
+
 ### Metachar тэмдэгтүүд
 
 | Тэмдэгт  | Жишээ         |Тайлбар                                                                      |
@@ -41,3 +64,20 @@
 |  [0-9]          | 0-9 хооронд байх цифр агуулсан                        	                   |
 |  [0-5][0-9]     | 00 - 59 хооронд байх тоо агуулсан                                          |
 |  [a-zA-Z]       | том жижиг үсэг агуулсан                                               	   |
+
+
+
+### Чухал жишээ
+```
+import re   
+s = 'My 2 favourite numbers are 7 and 10'
+lst = re.findall('[0-9]+', s)   
+print(lst) 
+```
+
+```
+import re  
+s = 'Hello from shubhamg199630@gmail.com to priya@yahoo.com about the meeting @2PM'
+lst = re.findall('\S+@\S+', s)     
+print(lst) 
+```
