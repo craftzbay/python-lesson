@@ -1,0 +1,7 @@
+[
+    {"owog": "Bymbaa", "ner": "Bold", "nas": 26, "huis": "er", "utas": "99111212"}, 
+    {"owog": "Tomor", "ner": "Alim", "nas": 22, "huis": "em", "utas": "89562345"}, 
+    {"owog": "test", "ner": "test", "nas": 12, "huis": "er", "utas": "123123123"},
+    {"owog": "Ganaa", "ner": "Saraa", "nas": 22, "huis": "em", "utas": "89562345"}, 
+    {"owog": "Naraa", "ner": "Tseren", "nas": 22, "huis": "em", "utas": "89562345"}
+]
