@@ -21,7 +21,6 @@ def menuGarga():
     elif too == 6:
         print("Programaas garlaa!")
 
-
 def infoData():
     f = open("data.txt","rt")
     data = f.read()
@@ -40,8 +39,9 @@ def registerData():
     nas = input("Nas:")
     huis = input("Huis:")
     utas = input("Utas:")
-
+    last = len(data)
     person = {
+        "id": last,
         "owog": owog,
         "ner": ner,
         "nas": nas,
@@ -55,6 +55,7 @@ def registerData():
     f.close()
     print("Амжилттай бүртгэгдлээ")
     menuGarga()
+
 def searchData():
     f = open("data.txt","rt")
     data = f.read()
@@ -92,3 +93,14 @@ def searchData():
     else:
         print('Программаас гарлаа')
     f.close()
+
+
+
+
+
+
+
+
+
+
+
