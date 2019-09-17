@@ -12,14 +12,12 @@ def menuGarga():
     print('------------------------------')
     
     too = int(input())
-    if too == 1: 
-        infoData()
-    elif too == 2:
-        searchData()
-    elif too == 3:
-        registerData()
-    elif too == 6:
-        print("Programaas garlaa!")
+    if too == 1:        infoData()
+    elif too == 2:      searchData()
+    elif too == 3:      registerData()
+    elif too == 4:      deleteData()
+    elif too == 5:      updateData()
+    elif too == 6:      print("Programaas garlaa!")
 
 def infoData():
     f = open("data.txt","rt")
@@ -94,10 +92,54 @@ def searchData():
         print('Программаас гарлаа')
     f.close()
 
+def deleteData():
+    f = open("data.txt","rt")
+    data = f.read()
+    data = json.loads(data)
+    f.close()
+    ner = input("Мэдээллийг устгах хүний нэр оруулна уу: \n")
+    for i in data:
+        if ner == i["ner"]:
+            print(i["id"],i["owog"],i["ner"],i["nas"],i["huis"],i["utas"])
 
+    id = int(input("Устгах мэдээллийн дугаарыг оруулна уу: \n"))
+    data.pop(id)
+    j = 0
+    for i in data:
+        i["id"] = j
+        j+=1
+    data = json.dumps(data)
+    f = open("data.txt","w")
+    f.write(data)
+    f.close()
+    print("Мэдээлэл устлаа\n\n")
 
+    menuGarga()
 
+def updateData():
+    f = open("data.txt","rt")
+    data = f.read()
+    data = json.loads(data)
+    f.close()
+    ner = input("Нэр оруулна уу:\n")
+    for i in data:
+        if ner.lower() == i["ner"].lower():
+            print(i["id"],i["owog"],i["ner"],i["nas"],i["huis"],i["utas"])
 
+    id = int(input("Засварлах мэдээллийн дугаарыг оруулна уу: \n"))
+    
+    data[id]["owog"] = input("Овог оруулна уу:")
+    data[id]["ner"] = input("Нэр оруулна уу:")
+    data[id]["nas"] = input("Нас оруулна уу:")
+    data[id]["huis"] = input("Хүйс оруулна уу:")
+    data[id]["utas"] = input("Утас оруулна уу:")
+
+    f = open("data.txt","w")
+    data = json.dumps(data)
+    f.write(data)
+    f.close()
+    print("Амжилттай засварлалаа\n\n")
+    menuGarga()
 
 
 
