@@ -29,6 +29,7 @@ def infoData():
     for i in data:
         print(i["owog"],i["ner"],i["nas"],i["huis"],i["utas"])
     f.close()
+    menuGarga()
 
 def registerData():
     f = open("data.txt","rt")
@@ -53,7 +54,7 @@ def registerData():
     f.write(data)
     f.close()
     print("Амжилттай бүртгэгдлээ")
-
+    menuGarga()
 def searchData():
     f = open("data.txt","rt")
     data = f.read()
@@ -75,6 +76,7 @@ def searchData():
             else:
                 print("Мэдээлэл олдсонгүй! ")
             break
+        menuGarga()
     elif n==2:
         utas = input("Утасны дугаар оруулна уу:")
         for i in data:
@@ -83,6 +85,7 @@ def searchData():
             else:
                 print("Мэдээлэл олдсонгүй! ")
             break
+        menuGarga()
     elif n==3:
         f.close()
         menuGarga()
