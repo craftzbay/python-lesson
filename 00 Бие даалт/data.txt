@@ -1,9 +1,0 @@
-[
-    {"id": 0, "owog": "Bymbaa", "ner": "Bold", "nas": 26, "huis": "er", "utas": "99111212"}, 
-    {"id": 1, "owog": "Tomor", "ner": "Alim", "nas": 22, "huis": "em", "utas": "89562345"}, 
-    {"id": 2, "owog": "test", "ner": "test", "nas": 12, "huis": "er", "utas": "123123123"}, 
-    {"id": 3, "owog": "Ganaa", "ner": "Saraa", "nas": 22, "huis": "em", "utas": "89562345"}, 
-    {"id": 4, "owog": "Naraa", "ner": "Tseren", "nas": 22, "huis": "em", "utas": "89562345"}, 
-    {"id": 5, "owog": "Test", "ner": "Test", "nas": "29", "huis": "er", "utas": "99235689"}, 
-    {"id": 6, "owog": "Suhbold", "ner": "Jargalmaa", "nas": "27", "huis": "em", "utas": "88892134"}
-]
