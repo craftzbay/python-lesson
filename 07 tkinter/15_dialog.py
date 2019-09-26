@@ -63,6 +63,15 @@ def createData():
     utas = simpledialog.askstring(
     "Input", "Утас оруулна уу",
                                     parent=root)                               
+    person = {
+        "owog":owog,
+        "ner":ner,
+        "nas":nas,
+        "huis":huis,
+        "utas":utas
+    }
+    data.append(person)
+    Read()
 
 
 def menuClicked():
