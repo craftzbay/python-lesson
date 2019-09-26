@@ -32,4 +32,25 @@ menu.add_command(label="Гарах", command=root.quit)
 menubar.add_cascade(label="Цэс", menu=menu)
 model_label = Label(top_frame, text='Model Dimensions')
 model_label.grid(row=0, columnspan=3)
+
+
+table = ttk.Treeview(
+    center, columns=("Firstname", "Lastname", "Gender", "Address", "Username", "Password"),
+                    selectmode="extended", height=500)
+
+table.heading('Firstname', text="Firstname", anchor=W)
+table.heading('Lastname', text="Lastname", anchor=W)
+table.heading('Gender', text="Gender", anchor=W)
+table.heading('Address', text="Address", anchor=W)
+table.heading('Username', text="Username", anchor=W)
+table.heading('Password', text="Password", anchor=W)
+table.column('#0', stretch=NO, minwidth=0, width=0)
+table.column('#1', stretch=NO, minwidth=0, width=80)
+table.column('#2', stretch=NO, minwidth=0, width=120)
+table.column('#3', stretch=NO, minwidth=0, width=80)
+table.column('#4', stretch=NO, minwidth=0, width=150)
+table.column('#5', stretch=NO, minwidth=0, width=120)
+table.column('#6', stretch=NO, minwidth=0, width=120)
+table.grid()
+
 root.mainloop()
