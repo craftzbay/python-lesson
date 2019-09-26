@@ -13,6 +13,18 @@ y = (screen_height/2) - (height/2)
 root.geometry('%dx%d+%d+%d' % (width, height, x, y))
 root.resizable(0, 0)
 
+def hello():
+    print("hello!")
+
+# create a toplevel menu
+menubar = Menu(root)
+menubar.add_command(label="Hello!", command=hello)
+menubar.add_command(label="Quit!", command=root.quit)
+
+# display the menu
+root.config(menu=menubar)
+
+
 top_frame = Frame(root, bg='white', width=450, height=50, pady=3).grid(row=0, sticky="ew")
 center = Frame(root, bg='green', width=50, height=40, padx=3, pady=3).grid(row=1, sticky="nsew")
 # layout all of the main containers
