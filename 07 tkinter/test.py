@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as tkMessageBox
+from tkinter import messagebox
 
 window = Tk() # window нэтрэй object үүсгэсэн
 window.title('Бүртгэлийн программ') # гарчиг
@@ -36,17 +37,21 @@ Label(zuun_tal, text="Утас:").grid(row=3, column=0)
 Entry(zuun_tal, textvariable=utas).grid(row=3, column=1)
 
 def save():
-    table.insert('', 'end', 
-    values=(owog.get(),ner.get(),nas.get(),utas.get()))
+    if owog.get() == '' or ner.get()=='' or nas.get()=='' or utas.get()=='':
+        messagebox.showwarning("Анхаар", "Хоосон байж болохгүй")
+    else: 
+        table.insert('', 'end', 
+        values=(owog.get(),ner.get(),nas.get(),utas.get()))
+        owog.set('')
+        ner.set('')
+        nas.set('')
+        utas.set('')
+def cancel():    
     owog.set('')
     ner.set('')
     nas.set('')
     utas.set('')
-def cancel():
-    owog.set('')
-    ner.set('')
-    nas.set('')
-    utas.set('')
+    print(table)
 
 Button(zuun_tal,text="Хадгалах",command=save).grid(row=6,column=0)
 Button(zuun_tal,text="Цуцлах",command=cancel).grid(row=6,column=1)
