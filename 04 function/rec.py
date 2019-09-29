@@ -6,5 +6,5 @@ def fact(n):
 def main():
     num = 5
     print(fact(num))
-if __name__ == "__main__":
-    main()
+    
+main()
