@@ -1,5 +1,6 @@
-from tkinter import Tk,Frame,StringVar,Label,Entry,Button
-from tkinter import LEFT,RIGHT,BOTTOM,TOP
+from tkinter import *
+import tkinter.ttk as ttk
+import tkinter.messagebox as tkMessageBox
 
 window = Tk() # window нэтрэй object үүсгэсэн
 window.title('Бүртгэлийн программ') # гарчиг
@@ -36,5 +37,20 @@ def cancel():
 
 Button(zuun_tal,text="Хадгалах",command=save).grid(row=5,column=0)
 Button(zuun_tal,text="Цуцлах",command=cancel).grid(row=5,column=1)
+
+
+table = ttk.Treeview(barun_tal, 
+columns=("Овог", "Нэр", "Нас", "Утас"),
+selectmode="extended", height=500)
+table.heading('Овог', text="Овог", anchor=W)
+table.heading('Нэр', text="Нэр", anchor=W)
+table.heading('Нас', text="Нас", anchor=W)
+table.heading('Утас', text="Утас", anchor=W)
+table.column('#0', stretch=NO, minwidth=0, width=0)
+table.column('#1', stretch=NO, minwidth=0, width=80)
+table.column('#2', stretch=NO, minwidth=0, width=120)
+table.column('#3', stretch=NO, minwidth=0, width=80)
+table.column('#4', stretch=NO, minwidth=0, width=150)
+table.pack()
 
 window.mainloop()
