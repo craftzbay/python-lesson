@@ -384,4 +384,36 @@ urlpatterns = [
 ```
   http://127.0.0.1:8000/signup
 
-44.
+44.user app-н views 
+```
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+
+# Create your views here.
+def signup_view(request):
+    print(request)
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('posts')
+    else:
+        form = UserCreationForm()
+    return render(request, 'signup.html', {'form': form})
+```
+45. user app-н signup.html 
+```
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Sign up</h1>
+    <form action="/signup" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Sign up">
+    </form>
+
+{% endblock %}
+```
+46.
