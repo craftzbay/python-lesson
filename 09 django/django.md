@@ -416,4 +416,70 @@ def signup_view(request):
 
 {% endblock %}
 ```
-46.
+46. user app-д login.html үүсгэн дараах кодыг бичнэ.
+```
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Login</h1>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Login">
+    </form>
+
+{% endblock %}
+```
+47. user app-н urls.py-д дараах кодыг нэмнэ ```path('login', views.login_view, name="login")```
+48. user app-н views.py-д дараах хэлбэртэй болго
+```
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login
+# Create your views here.
+def signup_view(request):
+    print(request)
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            return redirect('posts')
+    else:
+        form = UserCreationForm()
+    return render(request, 'signup.html', {'form': form})
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request,user)
+            return redirect('posts')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+```
+49. layout дараах кодыг нэмнэ
+```
+<form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+```
+50. user app-н views.py-д дараах кодыг нэмнэ
+```
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('home')
+```
+51. user app-н urls.py-д дараах кодыг нэмнэ
+``` path('logout', views.logout_view, name="logout"),```
+
+52. 
+
+
+
