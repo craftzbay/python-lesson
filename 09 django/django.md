@@ -479,7 +479,21 @@ def logout_view(request):
 51. user app-н urls.py-д дараах кодыг нэмнэ
 ``` path('logout', views.logout_view, name="logout"),```
 
-52. 
-
-
-
+52. blog app-н views.py-д дараах кодыг нэмнэ
+```
+from django.contrib.auth.decorators import login_required
+@login_required(login_url="login")
+def create_post(request):
+    return render(request, 'create-post.html')
+```
+53. blog app-н  urls.py-д
+```path('create',views.create_post, name='create_post')```
+54. blog app-д create-post.html үүсгэнэ
+```
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Create post</h1>
+<div class="post">
+</div>
+{% endblock %}
+```
