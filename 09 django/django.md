@@ -497,3 +497,37 @@ def create_post(request):
 </div>
 {% endblock %}
 ```
+55. blog app-д forms.py файл үүсгэнэ
+```
+from django import forms
+from .models import Post
+class CreatePost(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'body', 'image']
+```
+56. create-post.html
+```
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Create post</h1>
+<form action="{% url 'create_post' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
+```
+57. PostController
+```
+def create_post(request):
+    if request.method == 'POST':
+        form = CreatePost(request.POST, request.FILES)
+        if form.is_valid():
+            #save to db
+            return redirect('posts')
+    else:
+        form = CreatePost()
+        return render(request, 'create-post.html', {'form': form})
+```
+58.
