@@ -530,4 +530,24 @@ def create_post(request):
         form = CreatePost()
         return render(request, 'create-post.html', {'form': form})
 ```
-58.
+58. models.py Post model-д дараах талбарыг нэмнэ.
+```
+author = models.ForeignKey(User, default=None, on_delete=models.DO_NOTHING)
+```
+59. Бүх мэдээллээ устгаад migration хийнэ
+60. PostController.py
+```
+def create_post(request):
+    if request.method == 'POST':
+        form = CreatePost(request.POST, request.FILES)
+        if form.is_valid():
+            # save to db
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('posts')
+    else:
+        form = CreatePost()
+        return render(request, 'create-post.html', {'form': form})
+```
+61. 
