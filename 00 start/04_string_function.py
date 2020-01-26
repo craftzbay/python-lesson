@@ -22,3 +22,7 @@ print(a.upper())
 # тэмдэгт мөрийн H тэмдэгтийг J тэмдэгтээр сольж байршуулах
 a = "Hello, World!"
 print(a.replace("H", "J"))
+
+# тэмдэгт мөрөөс тэмдэгт мөрийг хайж тухайн хайсан тэмдэгт мөр олдож байвал байрлалыг буцаана.
+oguulber = "bi python helnii surgaltand suuj bn"
+print(oguulber.find("python"))
