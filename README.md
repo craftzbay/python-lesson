@@ -2,6 +2,8 @@
 
 Python программчлалын хэлний хичээл
 
+https://www.hackerrank.com/contests/programming-1587385793
+
 ## Хичээлийн хөтөлбөр
 
 | №   | Cэдэв              | Онол / Практик |
