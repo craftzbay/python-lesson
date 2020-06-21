@@ -6,7 +6,7 @@ window.title('Бүртгэлийн программ')
 window.geometry('350x250')
 window.resizable(0,0)
 
-# reg_no, owog, ner, utas
+selected_index = -1
 reg_no = StringVar()
 owog = StringVar()
 ner = StringVar()
@@ -32,7 +32,12 @@ def user_save():
         clear_entries()
 
 def user_update():
-    pass
+    if reg_no.get() == '' or owog.get() == '' or ner.get() == '' or utas.get() == '':
+        msgbox.showwarning('Анхаар','Мэдээллийг бүрэн оруулна уу')
+    else :
+        list_data.delete(selected_index)
+        list_data.insert(selected_index, reg_no.get() + ','+ owog.get()+','+ ner.get()+','+ utas.get())
+        clear_entries()
 
 def user_delete():
     list_data.delete(list_data.curselection()[0])
@@ -51,7 +56,10 @@ Button(window, text='Устгах', command=user_delete).grid(row=2, column=3)
 Button(window, text='Арилгах', command=clear_entries).grid(row=3, column=3)
 
 def user_select(event):
-    selected_user = list_data.get(list_data.curselection()[0])
+    index = list_data.curselection()[0]
+    selected_user = list_data.get(index)
+    selected_index = index
+
     data = selected_user.split(',')
     reg_no.set(data[0])
     owog.set(data[1])
