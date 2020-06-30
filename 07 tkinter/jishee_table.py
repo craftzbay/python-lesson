@@ -3,10 +3,10 @@ import tkinter.ttk as ttk
 import tkinter.messagebox as tkMessageBox
 from tkinter import messagebox
 
-window = Tk() # window нэтрэй object үүсгэсэн
-window.title('Бүртгэлийн программ') # гарчиг
-window.geometry('{}x{}'.format(800,500)) # цонхны хэмжээ
-window.resizable(0,0) # цонхны хэмжээг өөрчлөх боломжгүй болгох
+window = Tk()  # window нэтрэй object үүсгэсэн
+window.title('Бүртгэлийн программ')  # гарчиг
+window.geometry('{}x{}'.format(800, 500))  # цонхны хэмжээ
+window.resizable(0, 0)  # цонхны хэмжээг өөрчлөх боломжгүй болгох
 
 # Цонх grid болгож хуваах тохиргоо
 # window.grid_rowconfigure(100, weight=1)
@@ -18,8 +18,8 @@ nas = StringVar()
 utas = StringVar()
 
 # Үндсэн цонхоо баруун болон зүүн хэсгүүдэд хуваах
-zuun_tal = Frame(window,width=300,height=500)
-barun_tal = Frame(window,width=600, height=500,bg='yellow')
+zuun_tal = Frame(window, width=300, height=500)
+barun_tal = Frame(window, width=600, height=500, bg='yellow')
 zuun_tal.pack(side=LEFT)
 barun_tal.pack(side=RIGHT)
 
@@ -36,30 +36,34 @@ Entry(zuun_tal, textvariable=nas).grid(row=2, column=1)
 Label(zuun_tal, text="Утас:").grid(row=3, column=0)
 Entry(zuun_tal, textvariable=utas).grid(row=3, column=1)
 
+
 def save():
-    if owog.get() == '' or ner.get()=='' or nas.get()=='' or utas.get()=='':
+    if owog.get() == '' or ner.get() == '' or nas.get() == '' or utas.get() == '':
         messagebox.showwarning("Анхаар", "Хоосон байж болохгүй")
-    else: 
-        table.insert('', 'end', 
-        values=(owog.get(),ner.get(),nas.get(),utas.get()))
+    else:
+        table.insert('', 'end',
+                     values=(owog.get(), ner.get(), nas.get(), utas.get()))
         owog.set('')
         ner.set('')
         nas.set('')
         utas.set('')
-def cancel():    
+
+
+def cancel():
     owog.set('')
     ner.set('')
     nas.set('')
     utas.set('')
     print(table)
 
-Button(zuun_tal,text="Хадгалах",command=save).grid(row=6,column=0)
-Button(zuun_tal,text="Цуцлах",command=cancel).grid(row=6,column=1)
+
+Button(zuun_tal, text="Хадгалах", command=save).grid(row=6, column=0)
+Button(zuun_tal, text="Цуцлах", command=cancel).grid(row=6, column=1)
 
 
-table = ttk.Treeview(barun_tal, 
-columns=("Овог", "Нэр", "Нас", "Утас"),
-selectmode="extended", height=500)
+table = ttk.Treeview(barun_tal,
+                     columns=("Овог", "Нэр", "Нас", "Утас"),
+                     selectmode="extended", height=500)
 table.heading('Овог', text="Овог", anchor=W)
 table.heading('Нэр', text="Нэр", anchor=W)
 table.heading('Нас', text="Нас", anchor=W)
@@ -71,6 +75,6 @@ table.column('#3', stretch=NO, minwidth=0, width=100)
 table.column('#4', stretch=NO, minwidth=0, width=300)
 table.pack()
 
-table.insert('', 'end', values=("Bat","Dorj","26","89895623"))
+table.insert('', 'end', values=("Bat", "Dorj", "26", "89895623"))
 
 window.mainloop()

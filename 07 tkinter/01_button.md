@@ -2,12 +2,12 @@
 
 `w = Button ( master, option=value, ... )`
 
-* master - эцэг цонх
-* option - Тохиргоо болон утгуудыг өгнө
+- master - эцэг цонх
+- option - Тохиргоо болон утгуудыг өгнө
 
 Товчлуур үүсгэх жишээ
 
-```
+```python
 from tkinter import *
 
 window = Tk()
@@ -35,11 +35,11 @@ window.mainloop()
 5. command - дарсан үед ажиллах функц
 6. fg - бичвэрийн өнгө
 7. font - бичвэрийн фонт
-8.	height - өндөр
-9.	highlightcolor - фокуслах үеийн өнгө
-10.	image - зураг
-11.	justify -  LEFT, CENTER, RIGHT.
-12.	padx - хэвтээ тэнхлэгийн зай.
-13.	pady - босоо тэнхлэгийн зай.
-15.	state - төлөв DISABLED, ACTIVE, NORMAL.
-17.	width - өргөн
+8. height - өндөр
+9. highlightcolor - фокуслах үеийн өнгө
+10. image - зураг
+11. justify - LEFT, CENTER, RIGHT.
+12. padx - хэвтээ тэнхлэгийн зай.
+13. pady - босоо тэнхлэгийн зай.
+14. state - төлөв DISABLED, ACTIVE, NORMAL.
+15. width - өргөн
